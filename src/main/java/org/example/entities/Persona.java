@@ -18,10 +18,8 @@ import java.util.Set;
 @Getter
 @Builder
 @Entity
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Persona extends Base{
+
     private String nombre;
     private String apellido;
 

@@ -14,10 +14,8 @@ import java.util.List;
 @Getter
 @Builder
 @Entity
-public class Libro {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Libro extends Base{
+
     private String titulo;
     private Date fecha;
     private String genero;

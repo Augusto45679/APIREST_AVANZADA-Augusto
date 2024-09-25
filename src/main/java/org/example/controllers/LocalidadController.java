@@ -1,60 +1,15 @@
 package org.example.controllers;
 
-
 import org.example.entities.Localidad;
-import org.example.services.LocalidadService;
+import org.example.services.LocalidadServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/localidades")
-public class LocalidadController {
+public class LocalidadController extends BaseControllerImpl<Localidad, LocalidadServiceImpl> {
     @Autowired
-    private LocalidadService localidadService;
-
-    @GetMapping("")
-    public ResponseEntity<?> getAll(){
-        try{
-            return ResponseEntity.status(HttpStatus.OK).body(localidadService.findAll());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente más tarde\"}");
-        }
-
-    }
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getOne(Long id){
-        try{
-            return ResponseEntity.status(HttpStatus.OK).body(localidadService.findById(id));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente más tarde\"}");
-        }
-    }
-    @PostMapping("")
-    public ResponseEntity<?> save(Localidad localidad){
-        try{
-            return ResponseEntity.status(HttpStatus.OK).body(localidadService.save(localidad));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente más tarde\"}");
-        }
-    }
-    @PostMapping("/{id}")
-    public ResponseEntity<?> update(Long id, Localidad localidad){
-        try{
-            return ResponseEntity.status(HttpStatus.OK).body(localidadService.update(id,localidad));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente más tarde\"}");
-        }
-    }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(Long id){
-        try{
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(localidadService.delete(id));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente más tarde\"}");
-        }
-    }
+    private LocalidadServiceImpl localidadServiceImpl;
 
 }

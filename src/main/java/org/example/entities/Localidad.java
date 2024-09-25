@@ -11,10 +11,8 @@ import lombok.*;
 @Getter
 @Builder
 @Entity
-public class Localidad {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Localidad extends Base{
+
     private String denominacion;
 
     @ManyToOne(cascade = CascadeType.PERSIST)

@@ -15,10 +15,8 @@ import java.util.Set;
 @Setter
 @Getter
 @Builder
-public class Domicilio {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Domicilio extends Base{
+
     private String calle;
     private int numero;
 

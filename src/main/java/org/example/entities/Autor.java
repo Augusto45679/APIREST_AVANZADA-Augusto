@@ -2,6 +2,7 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +14,12 @@ import java.util.List;
 @Getter
 @Builder
 @Entity
-public class Autor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Audited
+public class Autor extends Base{
+
     private String nombre;
     private String apellido;
+    @Column(name = "Biografia",length = 1500)
     private String biografia;
 
     @Builder.Default
