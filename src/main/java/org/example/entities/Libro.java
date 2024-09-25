@@ -24,10 +24,6 @@ public class Libro extends Base{
     private int paginas;
     private String autor;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "fk_persona")
-    private Persona persona;
-
     @ManyToMany(cascade = CascadeType.REFRESH)
     private List<Autor> autores;
 
