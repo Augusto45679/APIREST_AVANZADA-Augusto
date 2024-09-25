@@ -29,49 +29,48 @@ public class Main {
         System.out.println("Andando! ejej");
     }
 
-    //fuera del main crea los objetos
-
     @Bean
     @Transactional
-    CommandLineRunner init(PersonaRepository personaRepository){ return args -> {
+    CommandLineRunner init(PersonaRepository personaRepository) {
+        return args -> {
 
-        Persona person1 = Persona.builder()
-                .apellido("Hernandez")
-                .nombre("Juan")
-                .build();
+            Persona person1 = Persona.builder()
+                    .apellido("Hernandez")
+                    .nombre("Juan")
+                    .build();
 
-        Domicilio domi1 = Domicilio.builder()
-                .calle("Perito Moreno").numero(299)
-                .build();
+            Domicilio domi1 = Domicilio.builder()
+                    .calle("Perito Moreno").numero(299)
+                    .build();
 
-        person1.setDomicilio(domi1);
+            person1.setDomicilio(domi1);
 
-        personaRepository.save(person1); //con esto se graba a traves de Spring
+            personaRepository.save(person1); // Save via Spring repository
 
-        //Creo otra persona
+            // Create another person
 
-        Persona person2 = Persona.builder()
-                .apellido("Gimenez")
-                .nombre("Esteban")
-                .build();
+            Persona person2 = Persona.builder()
+                    .apellido("Gimenez")
+                    .nombre("Esteban")
+                    .build();
 
-        Domicilio domi2 = Domicilio.builder()
-                .calle("San Juan")
-                .numero(100)
-                .build();
+            Domicilio domi2 = Domicilio.builder()
+                    .calle("San Juan")
+                    .numero(100)
+                    .build();
 
-        person2.setDomicilio(domi2);
+            person2.setDomicilio(domi2);
 
-        personaRepository.save(person2);
+            personaRepository.save(person2);
 
-        List<Persona> recuperadas = personaRepository.findAll();
-        System.out.println(recuperadas);
+            List<Persona> recuperadas = personaRepository.findAll();
+            System.out.println(recuperadas);
 
-        logger.info("Detalles de la persona: {}",recuperadas);
+            logger.info("Detalles de la persona: {}",recuperadas);
 
-        domi1.setCalle("Alberdi");
-        personaRepository.save(person1);
+            domi1.setCalle("Alberdi");
+            personaRepository.save(person1);
 
-    };
+        };
     }
 }
