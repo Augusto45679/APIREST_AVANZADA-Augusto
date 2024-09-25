@@ -3,6 +3,7 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @Table
 @AllArgsConstructor
@@ -11,6 +12,7 @@ import lombok.*;
 @Getter
 @Builder
 @Entity
+@Audited
 public class Localidad extends Base{
 
     private String denominacion;

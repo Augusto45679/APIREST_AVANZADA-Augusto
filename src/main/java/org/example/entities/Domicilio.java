@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 import java.util.Set;
 
@@ -15,6 +16,7 @@ import java.util.Set;
 @Setter
 @Getter
 @Builder
+@Audited
 public class Domicilio extends Base{
 
     private String calle;

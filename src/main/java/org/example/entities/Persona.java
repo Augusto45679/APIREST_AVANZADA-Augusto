@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 
 import java.util.HashSet;
@@ -18,6 +19,7 @@ import java.util.Set;
 @Getter
 @Builder
 @Entity
+@Audited
 public class Persona extends Base{
 
     private String nombre;
