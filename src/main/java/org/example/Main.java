@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.List;
 
+import org.example.entities.Localidad;
+import org.example.repositories.LocalidadRepository;
 import org.example.repositories.PersonaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,45 +33,28 @@ public class Main {
 
     @Bean
     @Transactional
-    CommandLineRunner init(PersonaRepository personaRepository) {
+    CommandLineRunner init(PersonaRepository personaRepository, LocalidadRepository localidadRepository) {
         return args -> {
+            Localidad localidad1 = Localidad.builder().denominacion("San Martin").build();
+            Localidad localidad2 = Localidad.builder().denominacion("Rivadavia").build();
+            localidadRepository.save(localidad1);
+            localidadRepository.save(localidad2);
 
-            Persona person1 = Persona.builder()
-                    .apellido("Hernandez")
-                    .nombre("Juan")
-                    .build();
+            Domicilio domi1 = Domicilio.builder().calle("Perito Moreno").numero(222).build();
+            Domicilio domi2 = Domicilio.builder().calle("Peru").numero(129).build();
 
-            Domicilio domi1 = Domicilio.builder()
-                    .calle("Perito Moreno").numero(299)
-                    .build();
+            Persona persona1 = Persona.builder().apellido("Gimenez").nombre("juan").build();
+            Persona persona2 = Persona.builder().apellido("Perez").nombre("miguel").build();
+            personaRepository.save(persona1);
+            personaRepository.save(persona2);
 
-            person1.setDomicilio(domi1);
+            localidad1.setDomicilio(domi1);
+            localidad2.setDomicilio(domi2);
 
-            personaRepository.save(person1); // Save via Spring repository
 
-            // Create another person
+            persona1.setDomicilio(domi1);
+            persona2.setDomicilio(domi2);
 
-            Persona person2 = Persona.builder()
-                    .apellido("Gimenez")
-                    .nombre("Esteban")
-                    .build();
-
-            Domicilio domi2 = Domicilio.builder()
-                    .calle("San Juan")
-                    .numero(100)
-                    .build();
-
-            person2.setDomicilio(domi2);
-
-            personaRepository.save(person2);
-
-            List<Persona> recuperadas = personaRepository.findAll();
-            System.out.println(recuperadas);
-
-            logger.info("Detalles de la persona: {}",recuperadas);
-
-            domi1.setCalle("Alberdi");
-            personaRepository.save(person1);
 
         };
     }
