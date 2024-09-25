@@ -27,7 +27,7 @@ public class Domicilio extends Base{
 
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "fk_localidad")
+    @JoinColumn(name = "fk_localidad", nullable= false)
     private Localidad localidad;
 
 }
