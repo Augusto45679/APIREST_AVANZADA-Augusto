@@ -30,7 +30,7 @@ public class Persona extends Base{
     private Domicilio domicilio;
 
     @Builder.Default
-    @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "persona",orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.PERSIST,orphanRemoval = true)
     @JoinTable(
             name = "persona_libro",
             joinColumns = @JoinColumn(name = "persona_id"),
