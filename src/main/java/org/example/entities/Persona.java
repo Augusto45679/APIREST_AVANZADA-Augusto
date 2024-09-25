@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.hibernate.envers.Audited;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,6 +37,6 @@ public class Persona extends Base{
             joinColumns = @JoinColumn(name = "persona_id"),
             inverseJoinColumns = @JoinColumn(name = "libro_id")
     )
-    private Set<Libro> libros = new HashSet<>(); // composicion
+    private Set<Libro> libros = new ArrayList<Libro>(); // composicion
 
 }
