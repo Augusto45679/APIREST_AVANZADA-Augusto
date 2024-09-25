@@ -1,10 +1,10 @@
 package org.example.services;
 
 
-import com.example.demo.entities.Autor;
-import com.example.demo.entities.Domicilio;
-import com.example.demo.repositories.DomicilioRepository;
+
 import jakarta.transaction.Transactional;
+import org.example.entities.Domicilio;
+import org.example.repositories.DomicilioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

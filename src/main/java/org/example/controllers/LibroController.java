@@ -1,9 +1,9 @@
 package org.example.controllers;
 
 
-import com.example.demo.entities.Autor;
-import com.example.demo.entities.Libro;
-import com.example.demo.services.LibroService;
+
+import org.example.entities.Libro;
+import org.example.services.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

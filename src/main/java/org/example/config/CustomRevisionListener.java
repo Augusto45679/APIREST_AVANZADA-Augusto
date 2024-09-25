@@ -1,6 +1,7 @@
 package org.example.config;
 
-import com.example.demo.entities.audit.Revision;
+
+import org.example.entities.audit.Revision;
 import org.hibernate.envers.RevisionListener;
 
 

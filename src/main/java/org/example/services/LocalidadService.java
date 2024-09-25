@@ -1,10 +1,9 @@
 package org.example.services;
 
-import com.example.demo.entities.Autor;
-import com.example.demo.entities.Localidad;
-import com.example.demo.entities.Persona;
-import com.example.demo.repositories.LocalidadRepository;
+
 import jakarta.transaction.Transactional;
+import org.example.entities.Localidad;
+import org.example.repositories.LocalidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,11 +3,10 @@ package org.example.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.example.entities.Persona;
+import org.example.repositories.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.example.demo.entities.Persona;
-import com.example.demo.repositories.PersonaRepository;
 
 import jakarta.transaction.Transactional;
 
