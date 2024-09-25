@@ -26,8 +26,7 @@ public class Libro extends Base{
     @JoinColumn(name = "fk_persona")
     private Persona persona;
 
-    @Builder.Default
-    @ManyToMany(mappedBy = "libro")
-    private List<Autor> autores = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.REFRESH)
+    private List<Autor> autores;
 
 }

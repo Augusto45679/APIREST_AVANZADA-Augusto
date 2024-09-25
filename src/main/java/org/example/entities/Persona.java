@@ -29,6 +29,11 @@ public class Persona extends Base{
 
     @Builder.Default
     @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "persona",orphanRemoval = true)
+    @JoinTable(
+            name = "persona_libro",
+            joinColumns = @JoinColumn(name = "persona_id"),
+            inverseJoinColumns = @JoinColumn(name = "libro_id")
+    )
     private Set<Libro> libros = new HashSet<>(); // composicion
 
 }
