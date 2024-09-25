@@ -1,8 +1,9 @@
 package org.example.services;
 
-import com.example.demo.entities.Autor;
-import com.example.demo.repositories.AutorRepository;
+
 import jakarta.transaction.Transactional;
+import org.example.entities.Autor;
+import org.example.repositories.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
 package org.example.repositories;
 
-import com.example.demo.entities.Localidad;
+
+import org.example.entities.Localidad;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

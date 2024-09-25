@@ -1,10 +1,9 @@
 package org.example.controllers;
 
 
-import com.example.demo.entities.Autor;
-import com.example.demo.entities.Domicilio;
-import com.example.demo.repositories.DomicilioRepository;
-import com.example.demo.services.DomicilioService;
+
+import org.example.entities.Domicilio;
+import org.example.services.DomicilioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,8 +1,8 @@
 package org.example.services;
 
-import com.example.demo.entities.Autor;
-import com.example.demo.entities.Libro;
-import com.example.demo.repositories.LibroRepository;
+
+import org.example.entities.Libro;
+import org.example.repositories.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

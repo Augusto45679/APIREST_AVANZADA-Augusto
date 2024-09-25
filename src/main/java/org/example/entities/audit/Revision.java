@@ -5,11 +5,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 //Envers
+import org.example.config.CustomRevisionListener;
 import org.hibernate.envers.RevisionEntity;
 import org.hibernate.envers.RevisionNumber;
 import org.hibernate.envers.RevisionTimestamp;
 
-import com.example.demo.config.CustomRevisionListener;
+
 
 // Java UTIL
 import jakarta.persistence.Column;

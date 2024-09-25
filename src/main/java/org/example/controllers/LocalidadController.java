@@ -1,8 +1,8 @@
 package org.example.controllers;
 
-import com.example.demo.entities.Autor;
-import com.example.demo.entities.Localidad;
-import com.example.demo.services.LocalidadService;
+
+import org.example.entities.Localidad;
+import org.example.services.LocalidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
