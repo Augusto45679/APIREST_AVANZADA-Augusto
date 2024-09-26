@@ -6,6 +6,8 @@ import org.example.repositories.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service //notacion para indicar que es un servicio
 public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long>{
     
@@ -14,6 +16,20 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long>{
 
     public PersonaServiceImpl(BaseRepository<Persona, Long> baserepository) {
         super(baserepository);
+    }
+
+    public List<Persona> search(String filtro) throws Exception{
+        try{
+        //List<Persona> personas = personaRepository.findByNombreContainingOrApellidoContaining(filtro,filtro);
+            // List<Persona> personas = personaRepository.search(filtro);
+
+            List<Persona> personas = personaRepository.searchNativo(filtro);
+
+            // estos son los 3 tipos de query que hay 
+        return personas;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
 }
