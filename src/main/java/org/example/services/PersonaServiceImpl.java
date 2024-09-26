@@ -4,6 +4,8 @@ import org.example.entities.Persona;
 import org.example.repositories.BaseRepository;
 import org.example.repositories.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,11 +27,24 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long>{
 
             List<Persona> personas = personaRepository.searchNativo(filtro);
 
-            // estos son los 3 tipos de query que hay 
+            // estos son los 3 tipos de query que hay
         return personas;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
 
+    public Page<Persona> search(String filtro, Pageable pageable) throws Exception{
+        try{
+            //Page<Persona> personas = personaRepository.findByNombreContainingOrApellidoContaining(filtro,filtro,pageable);
+            // Page<Persona> personas = personaRepository.search(filtro,pageable);
+
+            Page<Persona> personas = personaRepository.searchNativo(filtro,pageable);
+
+            // estos son los 3 tipos de query que hay
+            return personas;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
 }
