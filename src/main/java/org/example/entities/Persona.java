@@ -26,6 +26,7 @@ public class Persona extends Base{
 
     private String nombre;
     private String apellido;
+    private int dni;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
