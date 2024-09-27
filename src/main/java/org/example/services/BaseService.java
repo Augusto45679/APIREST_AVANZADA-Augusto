@@ -2,9 +2,7 @@ package org.example.services;
 
 import org.example.entities.Base;
 import org.springframework.data.domain.Page;
-
-
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
 import java.util.List;
 

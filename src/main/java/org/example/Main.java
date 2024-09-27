@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.List;
 
 import org.example.entities.Localidad;
 import org.example.repositories.LocalidadRepository;

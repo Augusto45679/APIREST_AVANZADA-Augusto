@@ -4,9 +4,7 @@ import jakarta.transaction.Transactional;
 import org.example.entities.Base;
 import org.example.repositories.BaseRepository;
 import org.springframework.data.domain.Page;
-
-
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
@@ -83,7 +81,7 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
     @Transactional
     public Page<E> findAll(Pageable pageable) throws Exception{
         try {
-           Page<E> entities = Baserepository.findAll(pageable);
+           Page<E> entities = Baserepository.findAll((org.springframework.data.domain.Pageable) pageable);
             return entities;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
